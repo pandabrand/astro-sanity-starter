@@ -1,7 +1,10 @@
-const path = require('path');
-const { createClient } = require('@sanity/client');
-const exportDataset = require('@sanity/export');
-const Configstore = require('configstore');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { createClient } from '@sanity/client';
+import exportDataset from '@sanity/export';
+import Configstore from 'configstore';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config = new Configstore('sanity', {}, { globalConfigPath: true });
 const token = config.get('authToken');

@@ -1,7 +1,10 @@
-const path = require('path');
-const fse = require('fs-extra');
-const { createClient } = require('@sanity/client');
-const Configstore = require('configstore');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fse from 'fs-extra';
+import { createClient } from '@sanity/client';
+import Configstore from 'configstore';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config = new Configstore('sanity', {}, { globalConfigPath: true });
 const token = process.env.SANITY_TOKEN || config.get('authToken');

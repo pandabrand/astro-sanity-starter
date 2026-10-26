@@ -17,3 +17,6 @@
 
 # macOS-specific files
 .DS_Store
+
+# TypeScript incremental build cache
+*.tsbuildinfo
